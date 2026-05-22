@@ -1,0 +1,9 @@
+{
+  "outputDirectory": "dava",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/dava/$1.html"
+    }
+  ]
+}
