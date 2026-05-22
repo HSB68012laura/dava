@@ -1,0 +1,114 @@
+:root {
+    --beige-grisaceo: #B2A49B;
+    --rosa-polvo: #F4C2C2;
+    --beige-claro: #F5E9DA;
+    --verde-menta: #A8E6CF;
+    --blanco-roto: #FDFCF8;
+    --texto-oscuro: #333333;
+}
+
+body {
+    background-color: var(--blanco-roto);
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+}
+
+h1, h2, h3, h4, .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+h1 { font-size: 36px; }
+h2 { font-size: 28px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+
+.navbar {
+    background-color: var(--beige-grisaceo);
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+.nav-link:hover {
+    color: var(--rosa-polvo) !important;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.slide {
+    display: none;
+    position: relative;
+}
+.slide.active {
+    display: block;
+}
+.slide img {
+    width: 100%;
+    height: auto;
+}
+.slide-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+.slider-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.product-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+}
+.product-card img {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.btn-comprar {
+    background-color: var(--rosa-polvo);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-comprar:hover {
+    background-color: var(--beige-grisaceo);
+}
+
+.footer {
+    background-color: var(--beige-grisaceo);
+    color: white;
+    margin-top: 50px;
+}
