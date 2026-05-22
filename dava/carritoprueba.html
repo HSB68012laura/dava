@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba Carrito</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h1>Prueba del Carrito</h1>
+    
+    <button id="aniadir">Añadir producto de prueba</button>
+    <button id="mostrar">Mostrar carrito</button>
+    <button id="limpiar">Limpiar carrito</button>
+    
+    <div id="resultado" style="margin-top:20px; padding:10px; background:#f0f0f0;"></div>
+
+    <script>
+        // Añadir producto de prueba
+        $("#aniadir").click(function() {
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            carrito.push({
+                nombre: "Producto prueba",
+                precio: 10.00,
+                cantidad: 1
+            });
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            $("#resultado").html("✅ Producto añadido");
+        });
+        
+        // Mostrar carrito
+        $("#mostrar").click(function() {
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            
+            if (carrito.length === 0) {
+                $("#resultado").html("❌ Carrito vacío");
+            } else {
+                let texto = "Contenido del carrito:<br>";
+                for (let i = 0; i < carrito.length; i++) {
+                    texto += "- " + carrito[i].nombre + " | Cantidad: " + carrito[i].cantidad + " | Precio: " + carrito[i].precio + "€<br>";
+                }
+                $("#resultado").html(texto);
+            }
+        });
+        
+        // Limpiar carrito
+        $("#limpiar").click(function() {
+            localStorage.removeItem("carrito");
+            $("#resultado").html("✅ Carrito limpiado");
+        });
+    </script>
+</body>
+</html>
